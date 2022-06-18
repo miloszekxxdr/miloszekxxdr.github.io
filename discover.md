@@ -1,1 +1,2 @@
-# XD
+# Hey Its miloszekxxd here if you know roblox Wait here...
+## My Roblox Account got banned today and this is revenge
