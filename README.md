@@ -1,3 +1,3 @@
 # Roblox Fe Scripts
-## ...
+## loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))() - Ez Hub
 
