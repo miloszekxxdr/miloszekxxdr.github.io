@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad-Supported Video Player</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+        }
+        .ad {
+            width: 15%;
+            background: gray;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            margin: 10px;
+        }
+        .video-container {
+            flex: 1;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ad-Supported Video Player</h1>
+    <div class="container">
+        <div class="ad">Ad Placeholder</div>
+        <div class="video-container">
+            <input type="text" id="video-url" placeholder="Paste YouTube URL here">
+            <button onclick="loadVideo()">Play Video</button>
+            <br>
+            <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="ad">Ad Placeholder</div>
+    </div>
+    <script>
+        function loadVideo() {
+            const url = document.getElementById('video-url').value;
+            const videoId = extractVideoID(url);
+            if (videoId) {
+                document.getElementById('video-frame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+        }
+
+        function extractVideoID(url) {
+            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*[?&]v=))([^?&\/]*)/);
+            return match ? match[1] : null;
+        }
+    </script>
+</body>
+</html>
